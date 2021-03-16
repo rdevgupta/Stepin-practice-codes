@@ -1,4 +1,11 @@
 #include<stdio.h>
+/**
+ * @brief 
+ * 
+ * first code just to print sum of 3 vars
+ * 
+ * @return int 
+ */
 int main()
 {
     int a, b, c, sum=0;
