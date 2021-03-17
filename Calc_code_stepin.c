@@ -1,24 +1,19 @@
 #include<stdio.h>
+#include"Calc_code_stepin.h"
 /**
  * @brief 
  * 
  * Write functions to compute sum, difference, product & division of two complex variables of the below structure.
  * 
+ * typedef struct complex_t {
+   float real;
+   float imaginary;
+   } complex_t;
+ * 
  * Dev Gupta
  * Candidate Id:- 258219
  * 
  */
-typedef struct complex_t {
-float real;
-float imaginary;
-} complex_t;
-
-//functions declarations
-complex_t sum(complex_t first, complex_t second);
-complex_t difference(complex_t first, complex_t second);
-complex_t product(complex_t first, complex_t second);
-complex_t division(complex_t first, complex_t second);
-
 int main()
 {
     complex_t first_variable, second_variable, result;
@@ -33,59 +28,16 @@ int main()
 
     //sum
     printf("Sum of complex variables is: \n");
-    result = sum(first_variable, second_variable);
-    printf("%4.2f + i%4.2f \n", result.real, result.imaginary);
-
+    sum(first_variable, second_variable);
     //difference
     printf("Difference of complex variables is: \n");
-    result = difference(first_variable, second_variable);
-    printf("%4.2f + i%4.2f\n", result.real, result.imaginary);
-
+    difference(first_variable, second_variable);
     //product
     printf("Product of complex variables is: \n");
-    result = product(first_variable, second_variable);
-    printf("%4.2f + i%4.2f\n", result.real, result.imaginary);
-
+    product(first_variable, second_variable);
     //division
     printf("Division of complex variables is: \n");
-    result = division(first_variable, second_variable);
-    printf("%4.2f + i%4.2f\n", result.real, result.imaginary);
-
+    division(first_variable, second_variable);
     return 0;
 }
 
-//definitons of function sum
-complex_t sum(complex_t first, complex_t second)
-{
-    complex_t output;
-    output.real = first.real + second.real;
-    output.imaginary = first.imaginary + second.imaginary;
-    return output;
-}
-
-//definitons of function difference
-complex_t difference(complex_t first, complex_t second)
-{
-    complex_t output;
-    output.real = first.real - second.real;
-    output.imaginary = first.imaginary - second.imaginary;
-    return output;
-}
-
-//definitons of function product
-complex_t product(complex_t first, complex_t second)
-{
-    complex_t output;
-    output.real = first.real * second.real;
-    output.imaginary = first.imaginary * second.imaginary;
-    return output;
-}
-
-//definitons of function division
-complex_t division(complex_t first, complex_t second)
-{
-    complex_t output;
-    output.real = first.real / second.real;
-    output.imaginary = first.imaginary / second.imaginary;
-    return output;
-}
