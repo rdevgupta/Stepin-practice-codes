@@ -1,51 +1,17 @@
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
-void Reading_File(){
-    FILE *fp=NULL;
-    fp=fopen("D:\\Stepin practice codes\\file_dev.csv","r");
-    if(fp==NULL){
-        printf("File is not present\n");
-        exit(-1);
+/**
+ * @file file_handling.c
+ * @author DEV GUPTA (you@domain.com)
+ * @brief stepin week3 code 2a Verion1 - Write functions to read from a Comma Separated Value(CSV) file and display each line.
+ * @version 0.1
+ * @date 2021-03-31
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
 
-    }
-    else{
-        char read[1024];
-        int row=0;
-        int column=0;
-        while (fgets(read,1024,fp))
-        {
-            column=0;
-            row++;
-            if(row==1){
-                continue;
-            }
-            char* value=strtok(read,",");
-            while(value){
-                if (column == 0) { 
-                    printf("Name :"); 
-                } 
-  
-                if (column == 1) { 
-                    printf("\tEmail_ID :"); 
-                } 
-  
-                if (column == 2) { 
-                    printf("\tGithub_Link:"); 
-                } 
-  
-                printf("%s", value); 
-                value = strtok(NULL, ","); 
-                column++; 
-            }
-        }
-        printf("\n");  
-    }
-    fclose(fp);
-
-}
-int main(){
+#include "file_handling.h"
+int main()
+{
     Reading_File();
-return 0;
-
+    return 0;
 }
